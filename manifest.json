@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Voice Typing",
+  "version": "1.0",
+  "description": "An extension that performs voice typing in browser with various languages.",
+  "permissions": [
+    "activeTab",
+    "sessions",
+    "webNavigation",
+    "privacy",
+    "downloads",
+    "tabs",
+    "storage",
+    "history",
+    "search",
+    
+    "scripting",
+    "offscreen" 
+  ],
+  
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  
+  "icons": {
+    "16": "icon_extension_16.png",
+    "32": "icon_extension_32.png",
+    "48": "icon_extension_48.png",
+    "128": "icon_extension_128.png"
+  },
+
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon_extension_16.png",
+      "32": "icon_extension_32.png"
+      
+    }
+  },
+
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["content.js"]
+      
+    }
+  ]
+
+}
